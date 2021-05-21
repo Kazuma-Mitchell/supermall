@@ -2,10 +2,6 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 
 Vue.use(VueRouter)
-// import { createApp } from "vue"
-// import VueRouter from "vue-router"
-// const app = createApp();
-// app.use(VueRouter)
 
 const Kazuma = () => import('../views/kazuma/Kazuma')
 const Mika = () => import('../views/mika/Mika')
@@ -33,11 +29,12 @@ const routes = [
     component: William
   }
 ]
+
 const router = new VueRouter({
-  routes,
-  mode: 'history'
+  mode: 'history',
+  base: process.env.BASE_URL,
+  routes
 })
 
-
-
 export default router
+
